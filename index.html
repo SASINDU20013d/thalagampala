@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentic Flora & Herbs | Nature's Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #1a4331;
+            --accent: #d4af37;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 67, 49, 0.85), rgba(26, 67, 49, 0.85)), 
+                        url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        #map-container {
+            transition: all 0.5s ease;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(52, 211, 153, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-[#1a4331] rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="serif text-2xl font-bold tracking-tight text-[#1a4331]">Authentic Flora</span>
+            </div>
+            <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-widest text-slate-600">
+                <a href="#collections" class="hover:text-[#1a4331] transition-colors">Collections</a>
+                <a href="#branches" class="hover:text-[#1a4331] transition-colors">Branches</a>
+                <a href="#about" class="hover:text-[#1a4331] transition-colors">Our Source</a>
+                <a href="#contact" class="hover:text-[#1a4331] transition-colors">Contact</a>
+            </div>
+            <button class="bg-[#1a4331] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-emerald-900 transition-all shadow-lg">
+                Catalog 2026
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-gradient min-h-screen flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl">
+            <span class="text-emerald-400 font-bold tracking-[0.3em] uppercase mb-4 block">Established 1994</span>
+            <h1 class="serif text-5xl md:text-7xl text-white mb-8 leading-tight">Premium Spices, Sauces & Traditional Food Products</h1>
+            <p class="text-emerald-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                Quality spices, authentic sauces, and traditional flours crafted with care. Serving Sri Lanka through 26+ branches nationwide.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#collections" class="bg-white text-[#1a4331] px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-all">Explore Products</a>
+                <a href="#branches" class="border border-white text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">Find a Branch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collections -->
+    <section id="collections" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-xl">
+                <h2 class="serif text-4xl md:text-5xl text-[#1a4331] mb-4">Our Product Collections</h2>
+                <p class="text-slate-500 text-lg">Premium quality spices, sauces, flours and specialty products sourced and crafted with care.</p>
+            </div>
+            <div class="flex gap-4 text-sm font-bold uppercase tracking-tighter overflow-x-auto">
+                <button class="filter-btn active text-[#1a4331] border-b-2 border-[#1a4331] pb-1 whitespace-nowrap" data-filter="all">All</button>
+                <button class="filter-btn text-slate-400 hover:text-[#1a4331] transition-colors pb-1 whitespace-nowrap" data-filter="spices">Spices</button>
+                <button class="filter-btn text-slate-400 hover:text-[#1a4331] transition-colors pb-1 whitespace-nowrap" data-filter="sauces">Sauces</button>
+                <button class="filter-btn text-slate-400 hover:text-[#1a4331] transition-colors pb-1 whitespace-nowrap" data-filter="flours">Flours</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
+            <!-- Products will be injected via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Map & Branches -->
+    <section id="branches" class="bg-[#1a4331] py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="serif text-4xl md:text-5xl text-white mb-2">අපේ ශාඛා ජාලය</h2>
+                    <p class="text-emerald-400 font-bold mb-6 tracking-wide uppercase text-sm">Our Branch Network</p>
+                    <p class="text-emerald-100 mb-10 text-lg leading-relaxed">ශ්‍රී ලංකාව පුරා විහිදුනු අපගේ ශාඛා 26න් ඔබට සමීපතම ස්ථානය තෝරාගන්න. <br><span class="text-sm opacity-70">Select your nearest location from our 26 branches across Sri Lanka.</span></p>
+                    
+                    <div class="grid grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-4 custom-scrollbar" id="branch-list">
+                        <!-- Branches injected via JS -->
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-[600px] relative border-4 border-white/10" id="map-container">
+                    <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.1!2d80.3043699!3d6.0871036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae16fa8af8162a9%3A0x45092769d750752e!2sThalgampala%20Thunapaha%20(Pvt)%20Ltd!5e0!3m2!1sen!2s!4v1707641234567!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl max-w-[200px]">
+                        <p class="text-[10px] uppercase tracking-tighter text-slate-500 font-bold mb-1 text-slate-800">දැන් පෙන්වන්නේ (Active)</p>
+                        <p id="selected-branch-name" class="text-[#1a4331] font-bold serif">Thalgampala 01</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-6 max-w-3xl mx-auto text-center">
+        <h2 class="serif text-4xl text-[#1a4331] mb-8">අප හා සම්බන්ධ වන්න</h2>
+        <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="ඔබේ නම (Name)" class="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1a4331] transition-all">
+                <input type="email" placeholder="විද්‍යුත් තැපෑල (Email)" class="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1a4331] transition-all">
+            </div>
+            <textarea placeholder="ඔබේ පණිවිඩය (Message)" rows="5" class="w-full px-6 py-4 rounded-2xl bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#1a4331] transition-all"></textarea>
+            <button class="bg-[#1a4331] text-white px-12 py-4 rounded-full font-bold hover:shadow-xl hover:translate-y-[-2px] transition-all">යොමු කරන්න (Send)</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-leaf text-emerald-400"></i>
+                        </div>
+                        <span class="serif text-2xl font-bold tracking-tight">Authentic Flora</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-8">1994 සිට ස්වභාවධර්මයේ ගුණාත්මකභාවය සුරකිමින්, ඉහළම ප්‍රමිතියෙන් යුත් ඖෂධීය නිෂ්පාදන ඔබ වෙත ලබාදීම අපේ අරමුණයි.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-600 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-600 transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-600 transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-xs mb-8 text-emerald-400">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">අපේ කතාව</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">මූලාශ්‍ර</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ගුණාත්මකභාවය</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">තොග ඇණවුම්</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-xs mb-8 text-emerald-400">Contact</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1"></i> 102 Botanical Way, Colombo 07, Sri Lanka</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i> +94 11 234 5678</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i> hello@authenticflora.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+                <p>&copy; 2026 Authentic Flora & Herbs Co. All rights reserved.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product Data
+        const products = [
+            // Spices
+            { name: "Chilli Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1599909533497-3a4d0d8f1cd2?auto=format&fit=crop&q=80" },
+            { name: "Roasted Chilli Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1599909533497-3a4d0d8f1cd2?auto=format&fit=crop&q=80" },
+            { name: "Turmeric Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&q=80" },
+            { name: "Coriander Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1596040033229-a0b89e4b8f3e?auto=format&fit=crop&q=80" },
+            { name: "Cumin Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1599909533497-3a4d0d8f1cd2?auto=format&fit=crop&q=80" },
+            { name: "Pepper Powder", category: "Powder Spices", type: "spices", image: "https://images.unsplash.com/photo-1599909533497-3a4d0d8f1cd2?auto=format&fit=crop&q=80" },
+            { name: "Curry Powder", category: "Curry Powders", type: "spices", image: "https://images.unsplash.com/photo-1596040033229-a0b89e4b8f3e?auto=format&fit=crop&q=80" },
+            { name: "Roasted Curry Powder", category: "Curry Powders", type: "spices", image: "https://images.unsplash.com/photo-1596040033229-a0b89e4b8f3e?auto=format&fit=crop&q=80" },
+            { name: "Fish Curry Powder", category: "Curry Powders", type: "spices", image: "https://images.unsplash.com/photo-1596040033229-a0b89e4b8f3e?auto=format&fit=crop&q=80" },
+            { name: "Meat Curry Powder", category: "Curry Powders", type: "spices", image: "https://images.unsplash.com/photo-1596040033229-a0b89e4b8f3e?auto=format&fit=crop&q=80" },
+            
+            // Sauces
+            { name: "Tomato Sauce 400g", category: "Tomato Sauces", type: "sauces", image: "https://images.unsplash.com/photo-1551301622-6fa51afe75a9?auto=format&fit=crop&q=80" },
+            { name: "Chilli Sauce 200g", category: "Chilli Sauces", type: "sauces", image: "https://images.unsplash.com/photo-1551301622-6fa51afe75a9?auto=format&fit=crop&q=80" },
+            { name: "Coconut Vinegar 750ml", category: "Vinegar", type: "sauces", image: "https://images.unsplash.com/photo-1582375791462-e1fbdccf9d3c?auto=format&fit=crop&q=80" },
+            { name: "Soya Bean Sauce 325ml", category: "Asian Sauces", type: "sauces", image: "https://images.unsplash.com/photo-1582375791462-e1fbdccf9d3c?auto=format&fit=crop&q=80" },
+            { name: "Oyster Sauce 385g", category: "Asian Sauces", type: "sauces", image: "https://images.unsplash.com/photo-1582375791462-e1fbdccf9d3c?auto=format&fit=crop&q=80" },
+            { name: "Sesame Oil 200ml", category: "Asian Sauces", type: "sauces", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80" },
+            { name: "Mango Chutney 200g", category: "Chutneys", type: "sauces", image: "https://images.unsplash.com/photo-1616832979104-7181b6b7c992?auto=format&fit=crop&q=80" },
+            { name: "Mustard Cream 350g", category: "Mustard", type: "sauces", image: "https://images.unsplash.com/photo-1582375791462-e1fbdccf9d3c?auto=format&fit=crop&q=80" },
+            
+            // Flours
+            { name: "Rice Flour (White)", category: "Rice Flour", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "Rice Flour (Red)", category: "Rice Flour", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "Kurakkan Piti", category: "Kurakkan", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "Roti Flour", category: "Ready-to-Cook", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "String Hoppers Flour (White)", category: "Ready-to-Cook", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "String Hoppers Flour (Red)", category: "Ready-to-Cook", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "Aata Piti", category: "Wheat Flour", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" },
+            { name: "Kadala Piti", category: "Legume Flours", type: "flours", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80" }
+        ];
+
+        const productGrid = document.getElementById('product-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        function renderProducts(filter = 'all') {
+            productGrid.innerHTML = '';
+            const filtered = filter === 'all' ? products : products.filter(p => p.type === filter);
+            
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'card-hover group bg-white p-3 rounded-2xl border border-slate-100';
+                card.innerHTML = `
+                    <div class="h-48 bg-slate-100 rounded-xl mb-4 overflow-hidden relative">
+                        <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase text-emerald-900 tracking-widest">${product.category}</span>
+                    </div>
+                    <h3 class="font-bold text-[#1a4331] mb-1 px-2">${product.name}</h3>
+                    <div class="flex justify-between items-center px-2 mt-3">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">${product.type}</span>
+                        <i class="fas fa-arrow-right text-emerald-900 opacity-0 group-hover:opacity-100 transition-opacity text-sm"></i>
+                    </div>
+                `;
+                productGrid.appendChild(card);
+            });
+        }
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('active', 'text-[#1a4331]', 'border-b-2', 'border-[#1a4331]');
+                    b.classList.add('text-slate-400');
+                });
+                btn.classList.add('active', 'text-[#1a4331]', 'border-b-2', 'border-[#1a4331]');
+                btn.classList.remove('text-slate-400');
+                renderProducts(btn.dataset.filter);
+            });
+        });
+
+        renderProducts();
+
+        // Branch Data with coordinates
+        const branches = [
+            { name: "Agency Ampegama", location: "Ampegama,Sri+Lanka", lat: 6.1897, lng: 80.0634 },
+            { name: "Agency Jayarathna", location: "Jayarathna,Sri+Lanka", lat: 6.0500, lng: 80.2000 },
+            { name: "Ahangama", location: "Ahangama,Sri+Lanka", lat: 5.9744, lng: 80.3689 },
+            { name: "Akurassa", location: "Akurassa,Sri+Lanka", lat: 5.9750, lng: 80.4850 },
+            { name: "Aluthwala", location: "Aluthwala,Sri+Lanka", lat: 6.0700, lng: 80.2500 },
+            { name: "Baddegama", location: "Baddegama,Sri+Lanka", lat: 6.1840, lng: 80.1970 },
+            { name: "Batapola", location: "Batapola,Sri+Lanka", lat: 6.1167, lng: 80.0833 },
+            { name: "Bogahagoda", location: "Bogahagoda,Sri+Lanka", lat: 6.0500, lng: 80.3000 },
+            { name: "Debarawewa", location: "Debarawewa,Sri+Lanka", lat: 6.3167, lng: 81.1333 },
+            { name: "Deniyaya", location: "Deniyaya,Sri+Lanka", lat: 6.3333, lng: 80.5500 },
+            { name: "Embilipitiya", location: "Embilipitiya,Sri+Lanka", lat: 6.3441, lng: 80.8495 },
+            { name: "Habaraduwa", location: "Habaraduwa,Sri+Lanka", lat: 6.0500, lng: 80.3167 },
+            { name: "Hapugala", location: "Hapugala,Sri+Lanka", lat: 6.0833, lng: 80.2167 },
+            { name: "Imaduwa", location: "Imaduwa,Sri+Lanka", lat: 6.0833, lng: 80.4333 },
+            { name: "Karapitiya", location: "Karapitiya,Sri+Lanka", lat: 6.0333, lng: 80.2167 },
+            { name: "Middeniya", location: "Middeniya,Sri+Lanka", lat: 6.2167, lng: 81.1500 },
+            { name: "Poddala", location: "Poddala,Sri+Lanka", lat: 6.0167, lng: 80.1833 },
+            { name: "Sangamiththapura", location: "Sangamiththapura,Sri+Lanka", lat: 6.0167, lng: 80.2833 },
+            { name: "Sarenthukade", location: "Sarenthukade,Sri+Lanka", lat: 6.2000, lng: 80.1500 },
+            { name: "Sooriyawewa", location: "Sooriyawewa,Sri+Lanka", lat: 6.4167, lng: 81.0500 },
+            { name: "Thalgampala 01", location: "Thalgampala,Sri+Lanka", lat: 6.0871036, lng: 80.3043699 },
+            { name: "Thalgampala 02", location: "Thalgampala,Sri+Lanka", lat: 6.2000, lng: 80.3000 },
+            { name: "Thawalama", location: "Thawalama,Sri+Lanka", lat: 6.0667, lng: 80.0667 },
+            { name: "Waduramba", location: "Waduramba,Sri+Lanka", lat: 6.1500, lng: 80.5000 },
+            { name: "Yakkalamulla 01", location: "Yakkalamulla,Sri+Lanka", lat: 6.2833, lng: 80.0333 },
+            { name: "Yakkalamulla 02", location: "Yakkalamulla,Sri+Lanka", lat: 6.2833, lng: 80.0333 }
+        ];
+
+        const list = document.getElementById('branch-list');
+        const mapIframe = document.getElementById('google-map');
+        const selectedName = document.getElementById('selected-branch-name');
+
+        selectedName.innerText = "Thalgampala 01";
+        
+        function updateMap(lat, lng, name) {
+            const locationQuery = encodeURIComponent(name + ", Sri Lanka");
+            const newSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.1!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s${locationQuery}!5e0!3m2!1sen!2s`;
+            mapIframe.src = newSrc;
+            selectedName.innerText = name;
+            
+            if (window.innerWidth < 1024) {
+                document.getElementById('map-container').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        branches.forEach((branch) => {
+            const div = document.createElement('div');
+            div.className = "bg-white/5 border border-white/10 p-4 rounded-2xl hover:bg-white/10 transition-all cursor-pointer group";
+            div.onclick = () => {
+                updateMap(branch.lat, branch.lng, branch.name);
+            };
+            
+            div.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-white text-sm font-semibold block">${branch.name}</span>
+                    </div>
+                    <i class="fas fa-location-dot text-emerald-400 text-xs opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+            `;
+            list.appendChild(div);
+        });
+    </script>
+</body>
+</html>
