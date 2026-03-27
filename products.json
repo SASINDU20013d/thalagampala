@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "Thalgampala Thunapaha",
+    "tagline": "Pure Ceylon Spices",
+    "description": "Authentic homemade herbal spices from the heart of Sri Lanka. Pure, natural, and traditionally crafted."
+  },
+  "categories": [
+    {
+      "id": "spice-powders",
+      "name": "Spice Powders",
+      "description": "Aromatic blends and pure spice powders, traditionally ground",
+      "products": [
+        {
+          "id": "curry-powder",
+          "name": "Curry Powder",
+          "image": "Curry Powder",
+          "description": "Authentic Sri Lankan curry powder blend with warming spices"
+        },
+        {
+          "id": "red-chili-powder",
+          "name": "Red Chili Powder",
+          "image": "red chili powder",
+          "description": "Pure red chili powder with vibrant color and balanced heat"
+        },
+        {
+          "id": "black-pepper-powder",
+          "name": "Black Pepper Powder",
+          "image": "black pepper powder",
+          "description": "Freshly ground black pepper with intense aromatic notes"
+        },
+        {
+          "id": "pepper-powder",
+          "name": "Pepper Powder",
+          "image": "pepper powder",
+          "description": "Premium quality pepper powder for everyday cooking"
+        },
+        {
+          "id": "turmeric",
+          "name": "Turmeric Powder",
+          "image": "termeric",
+          "description": "Golden turmeric with natural anti-inflammatory properties"
+        },
+        {
+          "id": "orange-fish-curry",
+          "name": "Orange-Red Fish Curry Powder",
+          "image": "orange-red fish curry powder",
+          "description": "Specially crafted blend for authentic fish curries"
+        }
+      ]
+    },
+    {
+      "id": "flours",
+      "name": "Flours & Grains",
+      "description": "Traditional flours and grain products for authentic cooking",
+      "products": [
+        {
+          "id": "white-rice-flour",
+          "name": "White Rice Flour",
+          "image": "white rice flour",
+          "description": "Fine quality rice flour for traditional Sri Lankan dishes"
+        },
+        {
+          "id": "white-roti-flour",
+          "name": "White Roti Flour",
+          "image": "white roti flour",
+          "description": "Premium roti flour for making soft, authentic roti"
+        },
+        {
+          "id": "red-rice-flour",
+          "name": "Rose-Blush Red Rice Flour",
+          "image": "rose-blush red rice flour",
+          "description": "Specialty red rice flour for unique culinary creations"
+        },
+        {
+          "id": "finger-millet-flour",
+          "name": "Finger Millet Flour",
+          "image": "finger millet flour",
+          "description": "Nutritious finger millet flour with earthy flavor"
+        }
+      ]
+    },
+    {
+      "id": "rice-grains",
+      "name": "Rice & Grains",
+      "description": "Premium quality rice varieties of Sri Lanka",
+      "products": [
+        {
+          "id": "white-sri-rice",
+          "name": "White Sri Lankan Rice",
+          "image": "white Sri Lankan rice",
+          "description": "Premium white rice from the fertile plains of Sri Lanka"
+        },
+        {
+          "id": "red-sri-rice",
+          "name": "Red Sri Lankan Rice",
+          "image": "red Sri Lankan",
+          "description": "Specialty red rice with subtle nutty flavor"
+        }
+      ]
+    },
+    {
+      "id": "legumes",
+      "name": "Legumes & Pulses",
+      "description": "Protein-rich pulses for nutritious meals",
+      "products": [
+        {
+          "id": "orange-lentils",
+          "name": "Orange Lentils (Dhal)",
+          "image": "orange lentils (dhal)",
+          "description": "Quick-cooking orange lentils, perfect for daily meals"
+        },
+        {
+          "id": "red-kidney-beans",
+          "name": "Red Kidney Beans",
+          "image": "red kidney beans",
+          "description": "Hearty red kidney beans for curries and casseroles"
+        },
+        {
+          "id": "chickpeas",
+          "name": "Chickpeas",
+          "image": "chickpeas",
+          "description": "Creamy chickpeas, versatile for many dishes"
+        }
+      ]
+    },
+    {
+      "id": "specialties",
+      "name": "Specialty Products",
+      "description": "Unique traditional products for authentic flavor",
+      "products": [
+        {
+          "id": "maldive-fish-sambal",
+          "name": "Maldive Fish Sambal",
+          "image": "Maldive fish sambal",
+          "description": "Traditional Maldive fish sambal with aromatic spices"
+        },
+        {
+          "id": "dried-fish",
+          "name": "Dried Fish",
+          "image": "dried fish",
+          "description": "Traditional dried fish for authentic Sri Lankan cuisine"
+        },
+        {
+          "id": "achcharu-mix",
+          "name": "Achcharu Mix",
+          "image": "achcharu mix i",
+          "description": "Spiced pickle mix with authentic Sri Lankan flavors"
+        }
+      ]
+    }
+  ]
+}
