@@ -166,6 +166,7 @@ body {
   letter-spacing: 0.12em; text-transform: uppercase;
   opacity: 0.95;
 }
+#navbar.scrolled .nav-brand-sub { color: black; font-weight: 700; }
 
 /* Nav links */
 .nav-links {
@@ -566,7 +567,8 @@ section { padding: clamp(40px, 8vw, 80px) 20px; }
   border-radius: 50%;
   pointer-events: none;
 }
-#products .section-title { color: var(--green-dark); }
+#products .section-title { color: var(--ink); }
+#products .section-title em { color: var(--green-dark); font-weight: 700; }
 #products .section-desc { color: var(--text-muted); }
 .products-header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 36px; }
 .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
@@ -1933,8 +1935,8 @@ a { color: inherit; }
   <div class="section-inner">
     <div class="products-header reveal">
       <div>
-        <span class="section-tag" style="color:var(--gold-light)">Our Range</span>
-        <h2 class="section-title">Premium Ceylon <em>Spices</em></h2>
+        <span class="section-tag" style="color:var(--green-dark); font-weight:700;">Our Range</span>
+        <h2 class="section-title" style="color:var(--ink);">Premium Ceylon <em>Spices</em></h2>
         <p class="section-desc">Crafted from naturally grown herbs and spices. Each product reflects our commitment to authenticity and quality. All natural, no preservatives.</p>
         <div class="filter-tabs" id="productFilters"></div>
       </div>
